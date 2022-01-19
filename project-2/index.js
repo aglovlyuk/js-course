@@ -97,19 +97,19 @@
 // }
 
 // task #8
-let n = +prompt("Please input number");
+let number8 = +prompt("Please input number");
 
-if (n >= 0 && n <= 100) {
-  n = Math.abs(n) % 101;
-  let n1 = n % 10;
+if (number8 >= 0 && number8 <= 100) {
+  number8 = Math.abs(number8) % 101;
+  let auxiliaryNumber = number8 % 10;
 
-  if (n > 10 && n < 20) {
+  if (number8 > 10 && number8 < 20) {
     console.log(`Ваша оценка: ${n} баллов`);
-  } else if (n1 > 1 && n1 < 5) {
-    console.log(`Ваша оценка: ${n} балла`);
-  } else if (n1 == 1) {
-    console.log(`Ваша оценка: ${n} балл`);
-  } else console.log(`Ваша оценка: ${n} баллов`);
+  } else if (auxiliaryNumber > 1 && auxiliaryNumber < 5) {
+    console.log(`Ваша оценка: ${number8} балла`);
+  } else if (auxiliaryNumber == 1) {
+    console.log(`Ваша оценка: ${number8} балл`);
+  } else console.log(`Ваша оценка: ${number8} баллов`);
 } else {
   console.log(`Введите число в диапазоне от 0 до 100`);
 }
