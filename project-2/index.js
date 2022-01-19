@@ -97,7 +97,7 @@
 // }
 
 // task #8
-let number8 = +prompt("Please input number");
+let number8 = +prompt("Please enter a number between 0 and 100");
 
 if (number8 >= 0 && number8 <= 100) {
   number8 = Math.abs(number8) % 101;
