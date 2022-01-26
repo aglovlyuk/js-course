@@ -1,15 +1,17 @@
 "use strict";
 
 // Task #1
-// let numFirst = +Math.random().toFixed(2);
-// let numSecond = +Math.random().toFixed(3);
-// let numThird = +Math.random().toFixed(4);
+// let randomNum = Math.random();
+// let numFirst = +randomNum.toFixed(2);
+// let numSecond = +randomNum.toFixed(3);
+// let numThird = +randomNum.toFixed(4);
 // console.log(numFirst, numSecond, numThird);
 
 // Task #2
 // for (let i = 0; i <= 10; i++) {
-//     if (i % 2) continue;
-//     console.log(i ** 2);
+//     if (i % 2 === 0) {
+//         console.log(i ** 2);
+//     }
 // }
 
 // Task #3
@@ -19,23 +21,21 @@
 // }
 
 // Task #4
-// let average = 0,
-//     userNum,
+// let num,
 //     sum = 0,
 //     i = 0;
 
 // while (true) {
-//     userNum = prompt("Enter a number");
+//     num = prompt("Enter a number");
 
-//     if (userNum === null || userNum === "") {
-//         console.log(`Quantity: ${i}; Sum: ${sum}; Average: ${average}`);
-//         break;
-//     } else if (!isNaN(userNum)) {
+//     if (num === null) break;
+//     else if (parseInt(num)) {
 //         i++;
-//         sum += +userNum;
-//         average = sum / i;
+//         sum += +num;
 //     }
 // }
+
+// console.log(`Quantity: ${i}; Sum: ${sum}; Average: ${sum / i}`);
 
 // Task #5
 // let userNum = +prompt("Enter a number from 0 to 100");
@@ -46,22 +46,22 @@
 // }
 
 // Task #6
-// function randomRange(min, max) {
-//     console.log(Math.random() * (max - min) + min);
+// function random(min, max) {
+//     return Math.random() * (max - min) + min;
 // }
 
-// randomRange(1, 5);
+// console.log(random(1, 5));
+// console.log(random(10, 50));
 
 // Task #7
-function pow(x, n) {
-    let initialVal = x;
+// function pow(x, n) {
+//     for (let i = 0; i < n; i++) {
+//         return x ** n;
+//     }
+// }
 
-    for (let i = 0; i < n - 1; i++) {
-        console.log((initialVal *= x));
-    }
-}
-
-pow(5, 3);
+// console.log(pow(3, 2));
+// console.log(pow(3, 3));
 
 // function pow(x, n) {
 //     console.log(x ** n);
