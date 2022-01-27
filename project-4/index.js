@@ -37,19 +37,19 @@
 // }
 
 // Task #4
-const array = [];
+const multTable = [];
 
 for (let i = 0; i < 10; i++) {
-    array.push([]);
+    multTable.push([]);
 
     for (let j = 0; j < 10; j++) {
         let correctI = i + 1;
         let correctJ = j + 1;
 
-        array[i].push(`${correctI} x ${correctJ} = ${correctI * correctJ}`);
+        multTable[i].push(`${correctI} x ${correctJ} = ${correctI * correctJ}`);
     }
 }
 
-console.log(array);
+console.log(multTable);
 
 // Task #5
