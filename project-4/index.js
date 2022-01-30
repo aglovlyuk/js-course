@@ -37,19 +37,45 @@
 // }
 
 // Task #4
-const multTable = [];
+// const multTable = [];
 
-for (let i = 0; i < 10; i++) {
-    multTable.push([]);
+// for (let i = 0; i < 10; i++) {
+//     multTable.push([]);
 
-    for (let j = 0; j < 10; j++) {
-        let correctI = i + 1;
-        let correctJ = j + 1;
+//     for (let j = 0; j < 10; j++) {
+//         let correctFactorX = i + 1;
+//         let correctFactorY = j + 1;
 
-        multTable[i].push(`${correctI} x ${correctJ} = ${correctI * correctJ}`);
-    }
-}
+//         multTable[i].push(
+//             `${correctFactorX} x ${correctFactorY} = ${
+//                 correctFactorX * correctFactorY
+//             }`
+//         );
+//     }
+// }
 
-console.log(multTable);
+// console.log(multTable);
 
 // Task #5
+// const employeeName = prompt("Please enter your first name");
+// const employeeSurname = prompt("Please enter your last name");
+// const employeePosition = prompt("Please enter your job position");
+
+// const userData = {
+//     name: employeeName,
+//     surname: employeeSurname,
+//     jobPosition: employeePosition,
+// };
+
+// console.log(
+//     `Привет, ${userData.name} ${userData.surname}. Как долго ты работаешь ${userData.jobPosition}?`
+// );
+
+// Task #6
+// function isEmpty(obj) {
+//     for (let key in obj) return false;
+//     return true;
+// }
+
+// console.log(isEmpty({})); // true
+// console.log(isEmpty({ name: "John" })); // false
