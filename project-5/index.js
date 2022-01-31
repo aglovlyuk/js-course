@@ -10,13 +10,13 @@
 // console.log(searchString("Hello", "www")); // false
 
 // Task #2
-// const capitalizeFirstLetter = function (str) {
-//     return str.charAt(0).toUpperCase() + str.slice(1);
-// };
+const capitalizeFirstLetter = function (str) {
+    return str[0].toUpperCase() + str.slice(1);
+};
 
-// console.log(capitalizeFirstLetter("hello")); // Hello
-// console.log(capitalizeFirstLetter("HELLO")); // HELLO
-// console.log(capitalizeFirstLetter("hElLo")); // HElLo
+console.log(capitalizeFirstLetter("hello")); // Hello
+console.log(capitalizeFirstLetter("HELLO")); // HELLO
+console.log(capitalizeFirstLetter("hElLo")); // HElLo
 
 // Task #3
 // const truncate = function (str, maxlength) {
