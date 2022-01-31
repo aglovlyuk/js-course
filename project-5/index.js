@@ -10,13 +10,13 @@
 // console.log(searchString("Hello", "www")); // false
 
 // Task #2
-const capitalizeFirstLetter = function (str) {
-    return str[0].toUpperCase() + str.slice(1);
-};
+// const capitalizeFirstLetter = function (str) {
+//     return str[0].toUpperCase() + str.slice(1);
+// };
 
-console.log(capitalizeFirstLetter("hello")); // Hello
-console.log(capitalizeFirstLetter("HELLO")); // HELLO
-console.log(capitalizeFirstLetter("hElLo")); // HElLo
+// console.log(capitalizeFirstLetter("hello")); // Hello
+// console.log(capitalizeFirstLetter("HELLO")); // HELLO
+// console.log(capitalizeFirstLetter("hElLo")); // HElLo
 
 // Task #3
 // const truncate = function (str, maxlength) {
@@ -28,47 +28,44 @@ console.log(capitalizeFirstLetter("hElLo")); // HElLo
 // console.log(truncate("Hello world", 25)); // Hello world
 
 // Task #4
-// const students = [
-//     {
-//         name: "John Smith",
-//         marks: [10, 8, 6, 9, 8, 7],
-//     },
-//     {
-//         name: "John Doe",
-//         marks: [9, 8, 7, 6, 7],
-//     },
-//     {
-//         name: "Thomas Anderson",
-//         marks: [6, 7, 10, 8],
-//     },
-//     {
-//         name: "Jean-Baptiste Emanuel Zorg",
-//         marks: [10, 9, 8, 9],
-//     },
-// ];
+const students = [
+    {
+        name: "John Smith",
+        marks: [10, 8, 6, 9, 8, 7],
+    },
+    {
+        name: "John Doe",
+        marks: [9, 8, 7, 6, 7],
+    },
+    {
+        name: "Thomas Anderson",
+        marks: [6, 7, 10, 8],
+    },
+    {
+        name: "Jean-Baptiste Emanuel Zorg",
+        marks: [10, 9, 8, 9],
+    },
+];
 
-// const studentsStats = function () {
-//     students.forEach((item) => {
-//         let sumMarks = item.marks.reduce((sum, current) => sum + current, 0);
+const getStudentsAverageMark = function (arr) {
+    let newArray = arr.map((item) => {
+        let sumMarks = item.marks.reduce((sum, current) => sum + current, 0);
 
-//         item.averageMark = sumMarks / item.marks.length;
-//     });
+        item.totalSumOfMarks = sumMarks;
+        item.averageMark = sumMarks / item.marks.length;
+    });
 
-//     return students;
-// };
+    return arr;
+};
 
-// const averageScore = function () {
-//     let totalScore = 0;
+const calcStudentsAverageMark = function (arr) {
+    let totalScore = arr.reduce((sum, item) => sum + item.totalSumOfMarks, 0);
 
-//     students.forEach((item) => {
-//         item.marks.forEach((mark) => (totalScore += mark));
-//     });
+    return totalScore / arr.length;
+};
 
-//     return totalScore / students.length;
-// };
-
-// console.log(studentsStats());
-// console.log(averageScore());
+console.log(getStudentsAverageMark(students));
+console.log(calcStudentsAverageMark(students), students);
 
 // Task #5
 // const vehicles = [
