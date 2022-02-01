@@ -117,3 +117,5 @@ console.log(calcStudentsAverageMark(students), students);
 // console.log(getKeysCount({ name: "John" })); // 1
 // console.log(getKeysCount({ name: "John", age: 22 })); // 2
 // console.log(getKeysCount({ name: "John", salary: null })); // 2
+
+console.log("New feature");
