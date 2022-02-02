@@ -47,7 +47,7 @@ const students = [
     },
 ];
 
-const clonedStudentsArray = students.map((item) => ({ ...item }));
+const clonedStudentsArray = students.map((item) => item);
 
 const getStudentsAverageMark = function (arr) {
     arr.forEach((item) => {
@@ -69,6 +69,8 @@ const calcStudentsAverageMark = function (arr) {
 
 console.log(getStudentsAverageMark(clonedStudentsArray));
 console.log(calcStudentsAverageMark(clonedStudentsArray));
+
+console.log(students, clonedStudentsArray);
 
 // Task #5
 // const vehicles = [
