@@ -11,7 +11,7 @@
 
 // Task #2
 // const capitalizeFirstLetter = function (str) {
-//     return str[0].toUpperCase() + str.slice(1);
+//     return `${str[0].toUpperCase()}${str.slice(1)}`;
 // };
 
 // console.log(capitalizeFirstLetter("hello")); // Hello
@@ -28,80 +28,75 @@
 // console.log(truncate("Hello world", 25)); // Hello world
 
 // Task #4
-// const students = [
-//     {
-//         name: "John Smith",
-//         marks: [10, 8, 6, 9, 8, 7],
-//     },
-//     {
-//         name: "John Doe",
-//         marks: [9, 8, 7, 6, 7],
-//     },
-//     {
-//         name: "Thomas Anderson",
-//         marks: [6, 7, 10, 8],
-//     },
-//     {
-//         name: "Jean-Baptiste Emanuel Zorg",
-//         marks: [10, 9, 8, 9],
-//     },
-// ];
-
-// const clonedStudentsArray = students.map((item) => ({ ...item }));
-
-// const getStudentsAverageMark = function (arr) {
-//     arr.forEach((item) => {
-//         const sumMarks = item.marks.reduce((sum, current) => sum + current, 0);
-
-//         item.totalSumOfMarks = sumMarks;
-//         item.averageMark = sumMarks / item.marks.length;
-//     });
-
-//     return arr;
-// };
-
-// const calcStudentsAverageMark = function (arr) {
-//     let totalScore = arr.reduce((sum, item) => sum + item.totalSumOfMarks, 0);
-
-//     return totalScore / arr.length;
-// };
-
-// console.log(getStudentsAverageMark(clonedStudentsArray));
-// console.log(calcStudentsAverageMark(clonedStudentsArray));
-
-// Task #5
-const vehicles = [
-    { make: "Honda", model: "CR-V", type: "suv", price: 24045 },
-    { make: "Honda", model: "Accord", type: "sedan", price: 22455 },
-    { make: "Mazda", model: "Mazda 6", type: "sedan", price: 24195 },
-    { make: "Mazda", model: "CX-9", type: "suv", price: 31520 },
-    { make: "Toyota", model: "4Runner", type: "suv", price: 34210 },
-    { make: "Toyota", model: "Sequoia", type: "SUV", price: 45560 },
-    { make: "Toyota", model: "Tacoma", type: "truck", price: 24320 },
-    { make: "Ford", model: "F-150", type: "truck", price: 27110 },
-    { make: "Ford", model: "Fusion", type: "sedan", price: 22120 },
-    { make: "Ford", model: "Explorer", type: "SUV", price: 31660 },
+const students = [
+    {
+        name: "John Smith",
+        marks: [10, 8, 6, 9, 8, 7],
+    },
+    {
+        name: "John Doe",
+        marks: [9, 8, 7, 6, 7],
+    },
+    {
+        name: "Thomas Anderson",
+        marks: [6, 7, 10, 8],
+    },
+    {
+        name: "Jean-Baptiste Emanuel Zorg",
+        marks: [10, 9, 8, 9],
+    },
 ];
 
-const getAveragePriceSuv = function (arr) {
-    return arr
-        .filter((item) => item.type.toLowerCase() === "suv")
-        .reduce((sum, current, i, arr) => {
-            sum += current.price;
+const clonedStudentsArray = students.map((item) => ({ ...item }));
 
-            return sum / arr.length;
-        }, 0);
+const getStudentsAverageMark = function (arr) {
+    arr.forEach((item) => {
+        const sumMarks = item.marks.reduce((sum, current) => sum + current, 0);
+
+        item.totalSumOfMarks = sumMarks;
+        item.averageMark = sumMarks / item.marks.length;
+    });
+
+    return arr;
 };
 
-console.log(getAveragePriceSuv(vehicles));
+const calcStudentsAverageMark = function (arr) {
+    let totalScore = arr.reduce((sum, item) => sum + item.totalSumOfMarks, 0);
+
+    return totalScore / arr.length;
+};
+
+console.log(getStudentsAverageMark(clonedStudentsArray));
+console.log(calcStudentsAverageMark(clonedStudentsArray));
+
+// Task #5
+// const vehicles = [
+//     { make: "Honda", model: "CR-V", type: "suv", price: 24045 },
+//     { make: "Honda", model: "Accord", type: "sedan", price: 22455 },
+//     { make: "Mazda", model: "Mazda 6", type: "sedan", price: 24195 },
+//     { make: "Mazda", model: "CX-9", type: "suv", price: 31520 },
+//     { make: "Toyota", model: "4Runner", type: "suv", price: 34210 },
+//     { make: "Toyota", model: "Sequoia", type: "SUV", price: 45560 },
+//     { make: "Toyota", model: "Tacoma", type: "truck", price: 24320 },
+//     { make: "Ford", model: "F-150", type: "truck", price: 27110 },
+//     { make: "Ford", model: "Fusion", type: "sedan", price: 22120 },
+//     { make: "Ford", model: "Explorer", type: "SUV", price: 31660 },
+// ];
+
+// const getAveragePriceSuv = function (arr) {
+//     return arr
+//         .filter((item) => item.type.toLowerCase() === "suv")
+//         .reduce((sum, amount, i, arr) => (sum += amount.price / arr.length), 0);
+// };
+
+// console.log(getAveragePriceSuv(vehicles));
 
 // Task #6
 // let arr = [10, 20, 3, 4, 0, 99, 97];
 // let sorted = copySorted(arr);
 
 // function copySorted(arr) {
-//     let cloneArr = Object.assign([], arr);
-//     return cloneArr.sort((a, b) => a - b);
+//     return arr.map((item) => item).sort((a, b) => a - b);
 // }
 
 // console.log(arr); // [10, 20, 3, 4, 0, 99, 97]
