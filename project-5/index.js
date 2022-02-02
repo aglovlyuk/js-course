@@ -53,7 +53,7 @@ const getStudentsAverageMark = function (arr) {
     arr.forEach((item) => {
         const sumMarks = item.marks.reduce((sum, current) => sum + current, 0);
 
-        item.totalSumOfMarks = sumMarks;
+        item.totalSumMarks = sumMarks;
         item.averageMark = sumMarks / item.marks.length;
     });
 
@@ -61,9 +61,10 @@ const getStudentsAverageMark = function (arr) {
 };
 
 const calcStudentsAverageMark = function (arr) {
-    let totalScore = arr.reduce((sum, item) => sum + item.totalSumOfMarks, 0);
-
-    return totalScore / arr.length;
+    return arr.reduce(
+        (sum, item, i, arr) => (sum += item.totalSumMarks / arr.length),
+        0
+    );
 };
 
 console.log(getStudentsAverageMark(clonedStudentsArray));
