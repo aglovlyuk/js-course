@@ -47,17 +47,18 @@ const students = [
     },
 ];
 
-const clonedStudentsArray = students.map((item) => item);
-
 const getStudentsAverageMark = function (arr) {
-    arr.forEach((item) => {
+    const newArr = arr.map((item) => {
         const sumMarks = item.marks.reduce((sum, current) => sum + current, 0);
 
-        item.totalSumMarks = sumMarks;
-        item.averageMark = sumMarks / item.marks.length;
+        return {
+            ...item,
+            totalSumMarks: sumMarks,
+            averageMark: sumMarks / item.marks.length,
+        };
     });
 
-    return arr;
+    return newArr;
 };
 
 const calcStudentsAverageMark = function (arr) {
@@ -67,10 +68,8 @@ const calcStudentsAverageMark = function (arr) {
     );
 };
 
-console.log(getStudentsAverageMark(clonedStudentsArray));
-console.log(calcStudentsAverageMark(clonedStudentsArray));
-
-console.log(students, clonedStudentsArray);
+console.log(getStudentsAverageMark(students));
+console.log(calcStudentsAverageMark(getStudentsAverageMark(students)));
 
 // Task #5
 // const vehicles = [
