@@ -8,7 +8,7 @@ console.log(sumTo(3)); // 6
 
 // Task #2
 const findShort = (str) =>
-    str.split(" ").reduce((a, b) => (a.length <= b.length ? a : b));
+    str.split(" ").sort((a, b) => a.length - b.length)[0];
 
 const sentance = "Lorem ipsum dolor sit amet";
 
