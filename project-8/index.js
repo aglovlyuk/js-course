@@ -3,7 +3,7 @@
 // Task #1
 // const myBirthsDate = new Date("1987-03-20");
 // const myBirthsDay = myBirthsDate.getDate();
-// const myBirthsMonth = ("0" + (myBirthsDate.getMonth() + 1)).slice(-2);
+// const myBirthsMonth = `0${myBirthsDate.getMonth() + 1}`.slice(-2);
 // const myBirthsYear = myBirthsDate.getFullYear();
 
 // console.log(`${myBirthsDay}.${myBirthsMonth}.${myBirthsYear}`);
@@ -12,13 +12,14 @@
 // const getDiffDays = function (firstDate, secondDate) {
 //     const startDate = Date.parse(firstDate);
 //     const endDate = Date.parse(secondDate);
+//     const msPerDay = 86400000;
 
-//     if (startDate > endDate) {
-//         return "Error: your start date is later than end";
-//     } else if (isNaN(startDate) || isNaN(endDate)) {
+//     if (isNaN(startDate) || isNaN(endDate)) {
 //         return "Error: invalid date";
+//     } else if (startDate > endDate) {
+//         return "Error: your start date is later than end";
 //     } else {
-//         return (endDate - startDate) / 86400000;
+//         return (endDate - startDate) / msPerDay;
 //     }
 // };
 
@@ -29,10 +30,9 @@
 
 // Task #3
 // const isWeekend = function (date) {
-//     const getDate = new Date(date);
-//     const getDay = getDate.getDay();
+//     const dayOfWeek = new Date(date).getDay();
 
-//     return getDay === 0 || getDay === 6 ? true : false;
+//     return dayOfWeek === 0 || dayOfWeek === 6;
 // };
 
 // console.log(isWeekend("2022-02-12")); // true
@@ -40,7 +40,6 @@
 // console.log(isWeekend("2022-02-09")); // false
 
 //Task #4
-
 const person = {
     fullName: "Sherlock Holmes",
     address: {
