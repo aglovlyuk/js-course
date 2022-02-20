@@ -12,7 +12,7 @@ class Employee {
         this.salary = salary;
     }
 
-    yearSalary() {
+    getYearSalary() {
         return this.salary * 12;
     }
 
@@ -31,6 +31,6 @@ const employee1 = new Employee(
 const employee2 = new Employee("Kate", "Smith", "29", "Vue JS developer", 2250);
 
 console.log(employee1, employee2);
-console.log(employee2.yearSalary());
+console.log(employee2.getYearSalary());
 console.log(employee2.fullName);
 console.log(Employee.vacationDays);
