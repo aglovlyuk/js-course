@@ -1,5 +1,11 @@
 "use strict";
 
+const isWeekend = function (date) {
+    const dayOfWeek = new Date(date).getDay();
+
+    return dayOfWeek === 0 || dayOfWeek === 6;
+};
+
 class Person {
     constructor(firstName, lastName, age, birthDayDate) {
         this.firstName = firstName;
@@ -14,11 +20,10 @@ class Person {
 }
 
 class Employee extends Person {
-    _salary = 1000;
-
-    constructor(firstName, lastName, age, birthDayDate, jobPosition) {
+    constructor(firstName, lastName, age, birthDayDate, jobPosition, salary) {
         super(firstName, lastName, age, birthDayDate);
         this.jobPosition = jobPosition;
+        this._salary = salary;
     }
 
     getYearSalary() {
@@ -26,19 +31,17 @@ class Employee extends Person {
     }
 
     celebrate() {
-        const currentYear = new Date().getFullYear();
-        const monthOfBirth = new Date(this.birthDayDate).getMonth();
-        const dateOfBirth = new Date(this.birthDayDate).getDate();
+        const birthdayThisYear = new Date(this.birthDayDate).setFullYear(
+            new Date().getFullYear()
+        );
 
-        const birthDayCurrentYear = new Date(
-            currentYear,
-            monthOfBirth,
-            dateOfBirth
-        ).getDay();
-
-        return birthDayCurrentYear === 0 || birthDayCurrentYear === 6
-            ? "Happy Birthday, let’s celebrate"
+        return isWeekend(birthdayThisYear)
+            ? super.celebrate()
             : "Happy Birthday, but I need to work";
+    }
+
+    get salary() {
+        return this._salary;
     }
 }
 
@@ -48,7 +51,8 @@ const employee = new Employee(
     "Smith",
     "32",
     "1989-12-06",
-    "Vue JS developer"
+    "Vue JS developer",
+    1000
 );
 
 console.log(person.celebrate());
