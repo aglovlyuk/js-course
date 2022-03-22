@@ -1,13 +1,13 @@
 "use strict";
 
-const promise = new Promise(function (resolve, reject) {
+const myTestPromise = new Promise(function (resolve, reject) {
     setTimeout(() => {
         //resolve("done");
         reject(new Error("Error message"));
     }, 5000);
 });
 
-promise
+myTestPromise
     .then((result) => {
         console.log(result);
     })
@@ -17,7 +17,7 @@ promise
 // async / await
 async function examplePromise() {
     try {
-        const result = await promise;
+        const result = await myTestPromise;
         console.log(result);
     } catch (error) {
         console.error(error);
