@@ -5,7 +5,7 @@ fetch("http://jsonplaceholder.typicode.com/users")
     .then((response) => response.json())
     .then((data) => {
         const employeesOneCompany = data.filter(
-            (item) => item.company.name.toLowerCase() === "johns group"
+            ({ company: { name } }) => name.toLowerCase() === "johns group"
         );
 
         console.log(employeesOneCompany);
