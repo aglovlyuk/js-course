@@ -1,11 +1,11 @@
 import storage from "./storage.js";
 import isValidDateFormat from "./date.js";
 
-const getPostStorage = storage.get("post");
+const postFromStorage = storage.get("post");
 
-if (getPostStorage) {
+if (postFromStorage) {
     console.log("from local");
-    console.log(getPostStorage);
+    console.log(postFromStorage);
 } else {
     console.log("from server");
 
