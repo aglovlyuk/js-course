@@ -4,6 +4,7 @@ body {
 }
 
 #albums {
+    display: inline-block;
     list-style: none;
     margin: 20px;
     padding: 0;
@@ -12,7 +13,26 @@ body {
 .album_title {
     position: relative;
     padding-left: 15px;
+    padding-right: 30px;
     margin-bottom: 7px;
+}
+
+.btn-remove {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0;
+    border: 1px solid currentColor;
+    background: none;
+    color: red;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.btn-remove:hover {
+    color: pink;
 }
 
 .album_title:before {
