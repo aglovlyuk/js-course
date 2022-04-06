@@ -1,5 +1,14 @@
 const list = document.getElementById("albums");
 
+list.addEventListener("click", (event) => {
+    const isRemoveButton = event.target.className === "btn-remove";
+
+    if (isRemoveButton) {
+        const albumItem = event.target.closest(".album_title");
+        albumItem.remove();
+    }
+});
+
 fetch("https://jsonplaceholder.typicode.com/albums")
     .then((response) => response.json())
     .then((data) => {
@@ -15,16 +24,6 @@ fetch("https://jsonplaceholder.typicode.com/albums")
             listItem.append(removeBtn);
 
             list.append(listItem);
-        });
-    })
-    .then(() => {
-        list.addEventListener("click", (event) => {
-            const isRemoveButton = event.target.className === "btn-remove";
-
-            if (isRemoveButton) {
-                const albumItem = event.target.closest(".album_title");
-                albumItem.remove();
-            }
         });
     })
     .catch((error) => console.error(error));
