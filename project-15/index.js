@@ -10,10 +10,12 @@ function isEmptyField(field) {
 }
 
 const createElements = (text) => {
+    // structure in html-template
     let listItem = template.content.cloneNode(true);
     let textContainer = listItem.querySelector(".list-item-txt");
     textContainer.textContent = text;
 
+    // create structure by JS
     // listItem.classList.add(
     //     "list-group-item",
     //     "d-flex",
@@ -67,11 +69,10 @@ form.onsubmit = (event) => {
 
 list.addEventListener("click", (event) => {
     const targetElem = event.target;
-    const isCheckbox = targetElem.type === "checkbox";
     const albumItem = targetElem.closest(".list-group-item");
     const removeButton = albumItem.querySelector(".btn-remove");
 
-    if (isCheckbox && targetElem.checked) {
+    if (targetElem.checked) {
         albumItem.classList.add("text-decoration-line-through");
         removeButton.disabled = true;
         targetElem.disabled = true;
