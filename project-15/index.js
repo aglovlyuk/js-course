@@ -63,12 +63,13 @@ form.onsubmit = (event) => {
     }
 
     createElements(todoinput.value);
-
-    todoinput.value = "";
+    form.reset();
 };
 
-list.addEventListener("click", (event) => {
+list.addEventListener("change", (event) => {
     const targetElem = event.target;
+    if (targetElem.type !== "checkbox") return;
+
     const albumItem = targetElem.closest(".list-group-item");
     const removeButton = albumItem.querySelector(".btn-remove");
 
