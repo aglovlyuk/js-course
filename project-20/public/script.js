@@ -1,7 +1,7 @@
 const productArea = document.getElementById("products-area");
 const template = document.getElementById("product-item");
 
-const createElements = ({ "img-src": imgSrc, url, product, price}) => {
+const createProduct = ({ "img-src": imgSrc, url, product, price }) => {
     // structure in html-template
     let productItem = template.content.cloneNode(true);
 
@@ -23,6 +23,6 @@ const createElements = ({ "img-src": imgSrc, url, product, price}) => {
 fetch("http://localhost:3000/api/products")
     .then((response) => response.json())
     .then((data) => {
-        data.forEach(createElements);
+        data.forEach(createProduct);
     })
     .catch((error) => console.error(error));
