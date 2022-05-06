@@ -82,13 +82,6 @@ function styles() {
         .pipe(browserSync.stream());
 }
 
-// function images() {
-//     return gulp
-//         .src([options.src.img, { base: "src" }])
-//         .pipe(imagemin(options.imagemin.images))
-//         .pipe(gulp.dest(options.dist.html));
-// }
-
 function startwatch() {
     gulp.watch(["src/**/*.js"], scripts);
     gulp.watch("src/scss/*.scss", styles);
@@ -112,7 +105,6 @@ exports.default = gulp.parallel(
     buildHtml,
     scripts,
     styles,
-    //images,
     browsersync,
     startwatch
 );
