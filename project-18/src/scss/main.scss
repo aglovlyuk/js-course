@@ -1,0 +1,66 @@
+@import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
+
+:root {
+    --bd-color: #ced4da;
+    --bd-radius: 0.25rem;
+    --anim-param: 0.4s ease-in-out;
+}
+
+#figure.created {
+    transition: var(--anim-param);
+    transition-property: background-color;
+    border: 1px solid var(--bd-color);
+}
+
+.color-range {
+    display: block;
+    position: relative;
+    height: 40px;
+    cursor: pointer;
+
+    &__control {
+        -webkit-appearance: none;
+        border: 1px solid var(--bd-color);
+        background: #fff;
+        width: 100%;
+        height: 100%;
+        border-radius: var(--bd-radius);
+        overflow: hidden;
+        outline: none;
+        padding: 5px;
+        transition: border-color 0.15s ease-in-out,
+            box-shadow 0.15s ease-in-out;
+
+            &:focus {
+                border-color: #86b7fe;
+                box-shadow: 0 0 0 0.25rem #0d6efd40;
+            }
+    }
+}
+
+input[type="color"] {
+    &::-webkit-color-swatch-wrapper {
+        padding: 0;
+        border-radius: 7px;
+    }
+
+    &::-webkit-color-swatch {
+        border: 0;
+        border-radius: var(--bd-radius);
+        transition: var(--anim-param);
+        transition-property: background-color;
+    }
+
+    &::-moz-focus-inner {
+        border: 0;
+        padding: 0;
+        border-radius: var(--bd-radius);
+    }
+    
+    &::-moz-color-swatch {
+        border: 0;
+        border-radius: var(--bd-radius);
+        transition: var(--anim-param);
+        transition-property: background-color;
+    }
+}

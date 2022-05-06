@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>HW#18|Figures</title>
+
+        <link
+            rel="icon"
+            type="image/svg"
+            sizes="466x466"
+            href="https://upload.wikimedia.org/wikipedia/commons/archive/1/17/20160402051041!Yin_yang.svg"
+        />
+
+        <meta name="msapplication-TileColor" content="#da532c" />
+        <meta name="theme-color" content="#ffffff" />
+
+        <link href="css/main.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="container">
+            <div class="row justify-content-center p-3">
+                <div class="col-md-8 col-xl-5">
+                    <h1 class="mb-4">Figures</h1>
+
+                    <form name="figures-form" class="figure-form">
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <h5 class="mb-3">Choose figure</h5>
+                                <select
+                                    class="form-select"
+                                    name="select-figure"
+                                    aria-label="Default select example"
+                                >
+                                    <option value="rectangle">Rectangle</option>
+                                    <option value="square">Square</option>
+                                    <option value="circle">Circle</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-6 mb-4">
+                                <h5 class="mb-3">Choose color</h5>
+                                <label for="custom-color" class="color-range">
+                                    <input
+                                        name="color-range"
+                                        type="color"
+                                        class="color-range__control"
+                                        id="custom-color"
+                                    />
+                                </label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="row justify-content-center p-3">
+                <div class="col-xxl-3 col-md-4">
+                    <div id="figure"></div>
+                </div>
+            </div>
+        </div>
+
+        <script src="js/main.js"></script>
+    </body>
+</html>
