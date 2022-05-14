@@ -2,10 +2,10 @@ import Title from "./components/Title/Title";
 import { useState } from "react";
 
 function App() {
-    const [isOpenedTitle, setIsOpenedTitle] = useState(false);
+    const [isOpenedTitle, setOpenedTitle] = useState(false);
 
     const handleOpen = () => {
-        setIsOpenedTitle(true);
+        setOpenedTitle(true);
     };
 
     if (isOpenedTitle === true) {
