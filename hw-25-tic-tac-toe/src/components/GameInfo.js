@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 const GameInfo = ({ winState, history, jumpTo, status }) => {
     return (
         <div className={`game-info ${winState}`}>
@@ -20,6 +22,13 @@ const GameInfo = ({ winState, history, jumpTo, status }) => {
             </ol>
         </div>
     );
+};
+
+GameInfo.propTypes = {
+    winState: PropTypes.string.isRequired,
+    history: PropTypes.array.isRequired,
+    jumpTo: PropTypes.func.isRequired,
+    status: PropTypes.string.isRequired,
 };
 
 export default GameInfo;

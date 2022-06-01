@@ -46,12 +46,13 @@ const Game = () => {
     let status;
     let winState = "";
     let winnerArray = [];
+    let isDraw = !current.squares.some((i) => i === null);
 
     if (winner) {
         status = `Winner: Player ${winner.winner}`;
         winnerArray = winner.winnerArray;
         winState = "is-win";
-    } else if (!current.squares.some((i) => i === null)) {
+    } else if (isDraw) {
         status = "Game over: draw";
         winState = "is-draw";
     } else {

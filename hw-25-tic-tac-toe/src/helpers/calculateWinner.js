@@ -21,7 +21,6 @@ function calculateWinner(squares) {
             return {
                 winner: squares[a],
                 winnerArray: lines[i],
-                isDraw: false,
             };
         }
     }
