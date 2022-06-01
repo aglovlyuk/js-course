@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
 
-const GameInfo = ({ winState, history, jumpTo, status }) => {
+const GameInfo = ({ gameState, history, jumpTo, status }) => {
     return (
-        <div className={`game-info ${winState}`}>
+        <div className={`game-info ${gameState}`}>
             <div className="game-info__status">{status}</div>
 
             <ol className="game-info__list">
@@ -25,7 +25,7 @@ const GameInfo = ({ winState, history, jumpTo, status }) => {
 };
 
 GameInfo.propTypes = {
-    winState: PropTypes.string.isRequired,
+    gameState: PropTypes.string.isRequired,
     history: PropTypes.array.isRequired,
     jumpTo: PropTypes.func.isRequired,
     status: PropTypes.string.isRequired,

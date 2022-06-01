@@ -44,17 +44,17 @@ const Game = () => {
     const winner = calculateWinner(current.squares);
 
     let status;
-    let winState = "";
+    let gameState = "";
     let winnerArray = [];
     let isDraw = !current.squares.some((i) => i === null);
 
     if (winner) {
         status = `Winner: Player ${winner.winner}`;
         winnerArray = winner.winnerArray;
-        winState = "is-win";
+        gameState = "is-win";
     } else if (isDraw) {
         status = "Game over: draw";
-        winState = "is-draw";
+        gameState = "is-draw";
     } else {
         status = `Next Player: ${xIsNext ? "X" : "O"}`;
     }
@@ -72,7 +72,7 @@ const Game = () => {
             <GameInfo
                 jumpTo={jumpTo}
                 history={history}
-                winState={winState}
+                gameState={gameState}
                 status={status}
             />
         </div>
