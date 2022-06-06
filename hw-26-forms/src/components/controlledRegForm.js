@@ -82,12 +82,7 @@ const ControlledRegForm = () => {
         <form onSubmit={handleSubmit}>
             <label>
                 Email:
-                <input
-                    type="email"
-                    name="email"
-                    value={input.email}
-                    onChange={handleChange}
-                />
+                <input type="email" name="email" value={input.email} />
             </label>
             {errorMessage.email && (
                 <span className="err">{errorMessage.email}</span>
@@ -95,12 +90,7 @@ const ControlledRegForm = () => {
 
             <label>
                 Password:
-                <input
-                    type="password"
-                    name="password"
-                    value={input.password}
-                    onChange={handleChange}
-                />
+                <input type="password" name="password" value={input.password} />
             </label>
             {errorMessage.password && (
                 <span className="err">{errorMessage.password}</span>
@@ -112,7 +102,6 @@ const ControlledRegForm = () => {
                     type="password"
                     name="confirmPassword"
                     value={input.confirmPassword}
-                    onChange={handleChange}
                 />
             </label>
             {errorMessage.confirmPassword && (
