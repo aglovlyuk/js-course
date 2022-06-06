@@ -1,0 +1,19 @@
+.App {
+  font: 22px Tahoma, sans-serif;
+  text-align: center;
+  padding: 1rem;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: center;
+}
+
+.nav-menu a {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.is-active {
+  color: violet;
+}
