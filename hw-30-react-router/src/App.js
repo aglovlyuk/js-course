@@ -1,10 +1,10 @@
 import "./styles.css";
-import { Routes, Route, NavLink } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
+import Header from "./components/Header";
 import Home from "./pages/Home";
-
-import Flights from "./pages/Flights";
 import Hotels from "./pages/Hotels";
+import Flights from "./pages/Flights";
 import Hotel from "./pages/Hotel";
 import Packages from "./pages/Packages";
 import NotFound from "./pages/NotFound";
@@ -12,45 +12,7 @@ import NotFound from "./pages/NotFound";
 function App() {
     return (
         <div className="App">
-            <header className="App-header">
-                <nav className="nav-menu">
-                    <NavLink
-                        className={({ isActive }) =>
-                            isActive ? "is-active" : ""
-                        }
-                        to="/"
-                    >
-                        Home
-                    </NavLink>
-
-                    <NavLink
-                        className={({ isActive }) =>
-                            isActive ? "is-active" : ""
-                        }
-                        to="hotels"
-                    >
-                        Hotels
-                    </NavLink>
-
-                    <NavLink
-                        className={({ isActive }) =>
-                            isActive ? "is-active" : ""
-                        }
-                        to="flights"
-                    >
-                        Flights
-                    </NavLink>
-
-                    <NavLink
-                        className={({ isActive }) =>
-                            isActive ? "is-active" : ""
-                        }
-                        to="packages"
-                    >
-                        Packages
-                    </NavLink>
-                </nav>
-            </header>
+            <Header />
 
             <Routes>
                 <Route path="/" element={<Home />} />
