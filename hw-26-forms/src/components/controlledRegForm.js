@@ -30,6 +30,8 @@ const ControlledRegForm = () => {
         [...formElements].forEach((element) => {
             validateInput(element);
         });
+
+        console.log("Submitted");
     };
 
     const validateInput = (element) => {
@@ -79,36 +81,49 @@ const ControlledRegForm = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <label>
+        <form className="reg-form" onSubmit={handleSubmit}>
+            <label className="form-control">
                 Email:
-                <input type="email" name="email" value={input.email} />
+                <input
+                    type="email"
+                    name="email"
+                    value={input.email}
+                    onChange={handleChange}
+                />
             </label>
             {errorMessage.email && (
                 <span className="err">{errorMessage.email}</span>
             )}
 
-            <label>
+            <label className="form-control">
                 Password:
-                <input type="password" name="password" value={input.password} />
+                <input
+                    type="password"
+                    name="password"
+                    value={input.password}
+                    onChange={handleChange}
+                />
             </label>
             {errorMessage.password && (
                 <span className="err">{errorMessage.password}</span>
             )}
 
-            <label>
+            <label className="form-control">
                 Confirm password:
                 <input
                     type="password"
                     name="confirmPassword"
                     value={input.confirmPassword}
+                    onChange={handleChange}
                 />
             </label>
             {errorMessage.confirmPassword && (
                 <span className="err">{errorMessage.confirmPassword}</span>
             )}
 
-            <button type="submit">Submit</button>
+            <button className="btn-primary" type="submit">
+                Submit
+            </button>
         </form>
     );
 };
