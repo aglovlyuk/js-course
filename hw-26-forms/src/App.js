@@ -1,9 +1,15 @@
 import "./styles.css";
 
-import ControlledRegForm from "./components/controlledRegForm";
+import RegistrationForm from "./components/RegistrationForm";
+import UserProfileForm from "./components/UserProfileForm";
 
 function App() {
-    return <ControlledRegForm />;
+    return (
+        <>
+            <RegistrationForm />
+            <UserProfileForm />
+        </>
+    );
 }
 
 export default App;
