@@ -11,7 +11,7 @@ const ImagesList = () => {
         axios
             .get("/list", {
                 params: {
-                    page: page,
+                    page,
                     limit: 10,
                 },
             })
@@ -20,10 +20,6 @@ const ImagesList = () => {
                 setLoading(false);
             });
     }, [page]);
-
-    if (isLoading) {
-        return <p>Loading...</p>;
-    }
 
     const handleMoreImage = () => {
         setPage(page + 1);
