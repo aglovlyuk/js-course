@@ -14,6 +14,8 @@ const ImagesList = () => {
     const [page, setPage] = useState(1);
     const [images, setImages] = useState([]);
     const [isLoading, setLoading] = useState(true);
+    const [selectedImage, setSelectedImage] = useState(null);
+    const [open, setOpen] = useState(false);
 
     useEffect(() => {
         axios
@@ -33,13 +35,13 @@ const ImagesList = () => {
         setPage(page + 1);
     };
 
-    const [selectedImage, setSelectedImage] = useState(null);
-
-    const handleClickOpen = (item) => {
+    const handleClickOpen = (item) => () => {
         setSelectedImage(item);
+        setOpen(true);
     };
 
     const handleClose = () => {
+        setOpen(false);
         setSelectedImage(null);
     };
 
@@ -53,14 +55,14 @@ const ImagesList = () => {
                             src={item.download_url}
                             alt={item.author}
                             loading="lazy"
-                            onClick={() => handleClickOpen(item)}
+                            onClick={handleClickOpen(item)}
                         />
                     </ImageListItem>
                 ))}
             </ImageList>
 
             <Dialog
-                open={selectedImage !== null}
+                open={open}
                 onClose={handleClose}
                 aria-labelledby="alert-dialog-title"
                 aria-describedby="alert-dialog-description"

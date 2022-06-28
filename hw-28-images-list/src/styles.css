@@ -19,6 +19,16 @@ body {
     cursor: pointer;
 }
 
+.list__img-info {
+    margin: .5rem .5rem 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+.list__img-info li {
+    margin-bottom: 0.75rem;
+}
+
 .btn-primary {
     width: 150px;
     height: 50px;
