@@ -15,31 +15,8 @@ body {
     margin-bottom: 1rem;
 }
 
-.list {
-    margin: 0 -.625rem;
-    padding: 0;
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.list__item {
-    max-width: calc(50% - 1.25rem);
-    margin: 0 .625rem 1.25rem;
-}
-
 .list__img {
-    width: 100%;
-}
-
-.list__img-info {
-    margin: .5rem .5rem 0;
-    padding-left: 0;
-    list-style: none;
-}
-
-.list__img-info li {
-    margin-bottom: 0.75rem;
+    cursor: pointer;
 }
 
 .btn-primary {

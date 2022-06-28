@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 
 import axios from "../helpers/axios";
-import Popup from "./Dialog";
 
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
@@ -10,7 +9,6 @@ import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
-import DialogContentText from "@mui/material/DialogContentText";
 
 const ImagesList = () => {
     const [page, setPage] = useState(1);
@@ -49,9 +47,9 @@ const ImagesList = () => {
         <>
             <ImageList sx={{ width: 500 }} cols={3} rowHeight={110}>
                 {images.map((item) => (
-                    //{ id, download_url, width, height, author }
                     <ImageListItem key={item.id}>
                         <img
+                            className="list__img"
                             src={item.download_url}
                             alt={item.author}
                             loading="lazy"
