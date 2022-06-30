@@ -75,11 +75,7 @@ const Button = ({ children, color, size, disabled, onClick }) => {
     }
 
     return (
-        <StyledButton
-            color={color}
-            disabled={disabled}
-            onClick={onClick}
-        >
+        <StyledButton color={color} disabled={disabled} onClick={onClick}>
             {children}
         </StyledButton>
     );
@@ -87,8 +83,8 @@ const Button = ({ children, color, size, disabled, onClick }) => {
 
 Button.propTypes = {
     children: PropTypes.node,
-    color: PropTypes.string,
-    size: PropTypes.string,
+    color: PropTypes.oneOf(["primary", "secandary"]),
+    size: PropTypes.oneOf(["small", "middle", "large"]),
     disabled: PropTypes.bool,
     onClick: PropTypes.func,
 };

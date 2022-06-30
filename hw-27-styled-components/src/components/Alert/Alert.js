@@ -94,7 +94,7 @@ const Alert = ({ children, color, onClose }) => {
 
 Alert.propTypes = {
     children: PropTypes.string.isRequired,
-    color: PropTypes.string,
+    color: PropTypes.oneOf(["primary", "error", "warning"]),
     onClose: PropTypes.func,
 };
 
