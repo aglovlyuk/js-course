@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import styled, { keyframes } from "styled-components";
 
 import { ReactComponent as CrossIcon } from "./cross.svg";
@@ -65,7 +66,7 @@ const StyledAlert = styled.div`
     }}
 `;
 
-const StyledLogo = styled(CrossIcon)`
+const StyledCross = styled(CrossIcon)`
     top: 50%;
     transform: translateY(-50%);
     right: 20px;
@@ -79,16 +80,22 @@ const StyledLogo = styled(CrossIcon)`
     }
 `;
 
-const Alert = ({ color, children, onClose }) => {
+const Alert = ({ children, color, onClose }) => {
     return (
         <>
             <StyledAlert color={color}>
                 {children}
-                <StyledLogo onClick={() => onClose()} />
+                <StyledCross onClick={onClose} />
             </StyledAlert>
             <StyledAlertOverlay />
         </>
     );
+};
+
+Alert.propTypes = {
+    children: PropTypes.string.isRequired,
+    color: PropTypes.string,
+    onClose: PropTypes.func,
 };
 
 export default Alert;

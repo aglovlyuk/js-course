@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import styled from "styled-components";
 
 const StyledButton = styled.button`
@@ -77,11 +78,19 @@ const Button = ({ children, color, size, disabled, onClick }) => {
         <StyledButton
             color={color}
             disabled={disabled}
-            onClick={() => onClick()}
+            onClick={onClick}
         >
             {children}
         </StyledButton>
     );
+};
+
+Button.propTypes = {
+    children: PropTypes.node,
+    color: PropTypes.string,
+    size: PropTypes.string,
+    disabled: PropTypes.bool,
+    onClick: PropTypes.func,
 };
 
 export default Button;
